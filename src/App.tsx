@@ -3,11 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import React, { useState } from 'react';
 import { Shield, ShieldAlert, Cpu, Terminal, ArrowDown, MapPin, CheckCircle, Network, Calendar, Award } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
