@@ -29,13 +29,14 @@ Since this is a fully static React + Vite application, it can be hosted on GitHu
 
 ### Method 1: Automatic Deployment with GitHub Actions (Recommended)
 
-1. Commit your code and push it to your GitHub repository.
+*Note: I have already created and configured the `.github/workflows/deploy.yml` file for you in this workspace!*
+
+1. Commit your code and push it to your GitHub repository at `https://github.com/anupupadhaya123/anupupadhaya123.github.io`.
 2. In your repository on GitHub, go to **Settings** ➔ **Pages**.
 3. Under **Build and deployment**, set **Source** to `GitHub Actions`.
-4. Create a folder named `.github/workflows/` at the root of your project, and save a file named `deploy.yml` inside it with the content from the **Workflow Template** section below.
-5. Push this workflow file to your `main` branch. GitHub will automatically build and deploy your site on every push!
+4. GitHub will automatically build and deploy your site on every push to the `main` branch!
 
-#### `.github/workflows/deploy.yml` Workflow Template:
+#### `.github/workflows/deploy.yml` (Already created and set up for you):
 ```yaml
 name: Deploy Portfolio to GitHub Pages
 
