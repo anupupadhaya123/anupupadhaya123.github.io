@@ -6,6 +6,7 @@ import {
 import Navbar from './components/Navbar';
 import ActiveDirectorySandbox from './components/ActiveDirectorySandbox';
 import AutonomousServiceDesk from './components/AutonomousServiceDesk';
+import AnupAIWidget from './components/AnupAIWidget';
 import Skills from './components/Skills';
 import Experiences from './components/Experiences';
 import Achievements from './components/Achievements';
@@ -491,6 +492,9 @@ export default function App() {
           </div>
         </div>
       )}
+
+      {/* Floating Anup AI Assistant Widget */}
+      <AnupAIWidget />
     </div>
   );
 }
