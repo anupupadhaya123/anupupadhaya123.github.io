@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import Navbar from './components/Navbar';
 import ActiveDirectorySandbox from './components/ActiveDirectorySandbox';
+import AutonomousServiceDesk from './components/AutonomousServiceDesk';
 import Skills from './components/Skills';
 import Experiences from './components/Experiences';
 import Achievements from './components/Achievements';
@@ -12,6 +13,7 @@ import ContactForm from './components/ContactForm';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('profile');
+  const [activeTool, setActiveTool] = useState('servicedesk');
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [localTime, setLocalTime] = useState('');
   
@@ -259,22 +261,50 @@ export default function App() {
         </div>
       </header>
 
-      {/* CORE INTERACTIVE LAB SANDBOX SECTION */}
+      {/* CORE INTERACTIVE LAB & TOOLS SECTION */}
       <section className="py-20 bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900" id="sandbox">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="text-center max-w-3xl mx-auto mb-8">
             <span className="font-mono text-[10px] uppercase font-bold text-sky-600 dark:text-sky-400 tracking-widest block mb-2">
-              ACTIVE PORTFOLIO PROJECT DEMO
+              ACTIVE INTERACTIVE TOOLS & LABS
             </span>
             <h2 className="font-sans font-bold text-2xl sm:text-3xl md:text-4xl text-slate-900 dark:text-white tracking-tight">
-              Enterprise Active Directory Lab
+              {activeTool === 'servicedesk' ? 'Autonomous IT Service Desk (AITSD)' : 'Enterprise Active Directory Lab'}
             </h2>
             <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base font-sans mt-3">
-              Anup built and tested an isolated enterprise sandbox containing Windows Server 2022, local DNS tables, offline bypass routines, and cloud-native endpoints. Test the routines below.
+              {activeTool === 'servicedesk'
+                ? 'AI-powered multi-agent ITIL v4 incident triage, dynamic SLA calculation, support tier dispatch, and live conversational troubleshooting.'
+                : 'Anup built and tested an isolated enterprise sandbox containing Windows Server 2022, local DNS tables, offline bypass routines, and cloud-native endpoints.'}
             </p>
+
+            {/* Interactive Tool Selector Tabs */}
+            <div className="inline-flex p-1.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 mt-6 shadow-sm">
+              <button
+                type="button"
+                onClick={() => setActiveTool('servicedesk')}
+                className={`px-4 py-2 rounded-xl text-xs font-sans font-bold flex items-center gap-2 transition-all cursor-pointer ${
+                  activeTool === 'servicedesk'
+                    ? 'bg-sky-500 text-slate-950 shadow-md shadow-sky-500/20'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                }`}
+              >
+                <span>🛡️ AI Service Desk (AITSD)</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTool('ad_lab')}
+                className={`px-4 py-2 rounded-xl text-xs font-sans font-bold flex items-center gap-2 transition-all cursor-pointer ${
+                  activeTool === 'ad_lab'
+                    ? 'bg-sky-500 text-slate-950 shadow-md shadow-sky-500/20'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                }`}
+              >
+                <span>🖥️ Active Directory Homelab</span>
+              </button>
+            </div>
           </div>
 
-          <ActiveDirectorySandbox />
+          {activeTool === 'servicedesk' ? <AutonomousServiceDesk /> : <ActiveDirectorySandbox />}
         </div>
       </section>
 

@@ -15,7 +15,7 @@ export default function Navbar({ activeSection, darkMode, onToggleTheme }) {
 
   const navItems = [
     { label: 'Profile', id: 'profile' },
-    { label: 'Sandbox homelab', id: 'sandbox' },
+    { label: 'AI Tools & Sandbox', id: 'sandbox' },
     { label: 'Core Skills', id: 'skills' },
     { label: 'Experience', id: 'experience' },
     { label: 'Education', id: 'education' },
